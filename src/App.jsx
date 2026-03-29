@@ -7,24 +7,23 @@ function App() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // --- ສ່ວນທີ່ເຈົ້າຕ້ອງເອົາ ID ມາໃສ່ ---
     emailjs.sendForm(
-      'service_cswb4ve',   // ວາງ Service ID ທີ່ນີ້
-      'YOUR_TEMPLATE_ID',  // ວາງ Template ID ທີ່ນີ້
+      'service_cswb4ve',   
+      'template_tjlv0v4',  
       form.current,
-      'klS5UCnx5KMxmpdoI'    // ວາງ Public Key ທີ່ນີ້
+      'YklS5UCnx5KMxmpdoI'   
     )
     .then((result) => {
         console.log(result.text);
         alert("ສົ່ງຂໍ້ຄວາມສຳເລັດແລ້ວ! ຂ້ອຍຈະຕິດຕໍ່ກັບໄວໆນີ້.");
-        form.current.reset(); // ສົ່ງແລ້ວໃຫ້ລຶບຂໍ້ຄວາມໃນ Form ອອກ
+        form.current.reset(); 
     }, (error) => {
         console.log(error.text);
         alert("ເກີດຂໍ້ຜິດພາດ: " + error.text);
     });
   };
 
-  // --- ສ່ວນ Design (CSS-in-JS) ---
+
   const styles = {
     wrapper: {
       backgroundColor: '#000000',

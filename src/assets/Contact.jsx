@@ -1,11 +1,10 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-// ເພີ່ມ CSS ພື້ນຖານໃຫ້ body ຢູ່ບ່ອນນີ້ກໍໄດ້ ເພື່ອຄວາມງ່າຍ
 const bodyStyle = {
-  backgroundColor: '#000000', // ພື້ນຫຼັງສີດຳ
-  color: '#FFFFFF',          // ຕົວໜັງສືສີຂາວ
-  fontFamily: "'Segoe UI', Roboto, 'Helvetica Neue', sans-serif", // ຟອນທັນສະໄໝ
+  backgroundColor: '#000000', 
+  color: '#FFFFFF',          
+  fontFamily: "'Segoe UI', Roboto, 'Helvetica Neue', sans-serif", 
   margin: 0,
   padding: 0,
   boxSizing: 'border-box',
@@ -16,12 +15,12 @@ const bodyStyle = {
 };
 
 const formContainerStyle = {
-  backgroundColor: '#1E1E1E', // ສີພື້ນກ່ອງເທົາເຂັ້ມ
+  backgroundColor: '#1E1E1E', 
   padding: '40px',
-  borderRadius: '16px',        // ຂອບມົນ
+  borderRadius: '16px',        
   maxWidth: '450px',
   width: '90%',
-  boxShadow: '0 8px 30px rgba(0,0,0,0.5)', // ເງົາໃຫ້ກ່ອງລອຍຂຶ້ນມາ
+  boxShadow: '0 8px 30px rgba(0,0,0,0.5)', 
   textAlign: 'center',
 };
 
@@ -30,8 +29,8 @@ const inputStyle = {
   padding: '12px 15px',
   margin: '10px 0 20px 0',
   borderRadius: '8px',
-  border: '1px solid #333',     // ຂອບສີເຂັ້ມ
-  backgroundColor: '#121212',  // ສີພື້ນ input
+  border: '1px solid #333',     
+  backgroundColor: '#121212',  
   color: '#FFF',
   fontSize: '16px',
 };
@@ -41,7 +40,7 @@ const buttonStyle = {
   padding: '12px',
   border: 'none',
   borderRadius: '8px',
-  backgroundColor: '#6D28D9', // ສີມ່ວງເປັນສີຫຼັກ
+  backgroundColor: '#6D28D9', 
   color: 'white',
   fontSize: '18px',
   fontWeight: 'bold',
@@ -49,7 +48,7 @@ const buttonStyle = {
   transition: 'background-color 0.3s',
 };
 
-// ຫົວຂໍ້ Let's *talk*
+
 const h2Style = {
   fontSize: '36px',
   fontWeight: 'bold',
@@ -58,7 +57,7 @@ const h2Style = {
 };
 
 const talkSpanStyle = {
-  color: '#A78BFA', // ສີມ່ວງອ່ອນສຳລັບ talk
+  color: '#A78BFA', 
   fontStyle: 'italic',
 };
 
@@ -67,8 +66,8 @@ const labelStyle = {
   textAlign: 'left',
   fontSize: '14px',
   fontWeight: '600',
-  color: '#AAA', // ສີ label ອອກເທົາອ່ອນ
-  textTransform: 'uppercase', // ໃຫ້ເປັນຕົວໃຫຍ່ທັງໝົດ
+  color: '#AAA', 
+  textTransform: 'uppercase', 
   letterSpacing: '1px',
 };
 
@@ -77,7 +76,7 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    // ກະລຸນາໃສ່ ID ຂອງເຈົ້າແທນບ່ອນນີ້
+    
     emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
       .then((result) => {
           console.log(result.text);
