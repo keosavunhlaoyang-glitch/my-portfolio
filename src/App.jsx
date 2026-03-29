@@ -11,7 +11,7 @@ function App() {
       'service_cswb4ve',   
       'template_tjlv0v4',  
       form.current,
-      'YklS5UCnx5KMxmpdoI'   
+      'klS5UCnx5KMxmpdoI'   
     )
     .then((result) => {
         console.log(result.text);
@@ -114,12 +114,12 @@ function App() {
         <form ref={form} onSubmit={sendEmail}>
           <div style={styles.inputGroup}>
             <label>NAME</label>
-            <input type="text" name="user_name" placeholder="Your full name" required style={styles.input} />
+            <input type="text" name="from_name" placeholder="Your full name" required style={styles.input} />
           </div>
 
           <div style={styles.inputGroup}>
             <label>EMAIL</label>
-            <input type="email" name="user_email" placeholder="you@example.com" required style={styles.input} />
+            <input type="email" name="email" placeholder="you@example.com" required style={styles.input} />
           </div>
 
           <div style={styles.inputGroup}>
