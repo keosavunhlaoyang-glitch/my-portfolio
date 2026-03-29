@@ -11,7 +11,7 @@ function App() {
       'service_cswb4ve',   
       'template_tjlv0v4',  
       form.current,
-      'klS5UCnx5KMxmpdoI'   
+      'klS5UCnx5KMxmpdoi'   
     )
     .then((result) => {
         console.log(result.text);
