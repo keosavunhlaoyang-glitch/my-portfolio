@@ -41,22 +41,38 @@ function App() {
         <h1 style={styles.title}>Computer <span style={styles.purpleText}>Science</span></h1>
         <p style={{ color: '#888', fontSize: '18px' }}>Specializing in Web Development & AI Applications.</p>
       </header>
+      {/* ປຸ່ມ Download CV */}
+<div style={{ textAlign: 'center', marginTop: '20px' }}>
+  <a 
+    href="https://drive.google.com/drive/folders/1BQCKV4L50ef6jQPE5MdwtIL1HEd2S9LW" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    style={{
+      padding: '12px 24px',
+      backgroundColor: 'transparent',
+      color: '#A78BFA',
+      border: '2px solid #A78BFA',
+      borderRadius: '50px',
+      fontSize: '16px',
+      fontWeight: '600',
+      textDecoration: 'none',
+      transition: '0.3s',
+      display: 'inline-block'
+    }}
+    onMouseOver={(e) => {
+      e.target.style.backgroundColor = '#A78BFA';
+      e.target.style.color = '#fff';
+    }}
+    onMouseOut={(e) => {
+      e.target.style.backgroundColor = 'transparent';
+      e.target.style.color = '#A78BFA';
+    }}
+  >
+    Download CV
+  </a>
+</div>
 
-      {/* 2. Projects Section (ຂໍ້ມູນຈາກ CV) */}
-      <section style={styles.section}>
-        <h2 style={{ fontSize: '32px' }}>Selected <span style={styles.purpleText}>Projects</span></h2>
-        <div style={styles.grid}>
-          <div style={styles.card}>
-            <h3 style={styles.purpleText}>Plant Disease Detection</h3>
-            <p style={{ color: '#888' }}>ພັດທະນາລະບົບກວດຈັບພະຍາດໃບໝາກແຕງ ໂດຍໃຊ້ CNN Model ແລະ Python.</p>
-          </div>
-          <div style={styles.card}>
-            <h3 style={styles.purpleText}>Smart Scheduling System</h3>
-            <p style={{ color: '#888' }}>ລະບົບຈັດຕາຕະລາງຮຽນອັດສະລິຍະ ສຳລັບຄະນະວິທະຍາສາດທຳມະຊາດ.</p>
-          </div>
-        </div>
-      </section>
-
+      
       {/* 3. Skills Section */}
       <section style={{ ...styles.section, backgroundColor: '#050505' }}>
         <h2 style={{ fontSize: '32px' }}>Technical <span style={styles.purpleText}>Skills</span></h2>
@@ -67,7 +83,7 @@ function App() {
         </div>
       </section>
 
-      {/* 4. Contact Section (ອັນເກົ່າຂອງເຈົ້າ) */}
+      {/* 4. Contact Section ) */}
       <section style={styles.section}>
         <div style={{ maxWidth: '500px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '32px' }}>Let's <span style={styles.purpleText}>Work Together</span></h2>
