@@ -6,133 +6,89 @@ function App() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs.sendForm(
-      'service_cswb4ve',   
-      'template_tjlv0v4',  
+      'service_cswb4ve', 
+      'template_tjlv0v4', 
       form.current,
-      '4FtS8ke-GTsHn7MM3' 
+      'klS5UCnx5KMxmpdoI'
     )
     .then((result) => {
-        console.log(result.text);
-        alert("ສົ່ງຂໍ້ຄວາມສຳເລັດແລ້ວ! ຂ້ອຍຈະຕິດຕໍ່ກັບໄວໆນີ້.");
-        form.current.reset(); 
+        alert("ສົ່ງຂໍ້ຄວາມສຳເລັດແລ້ວ!");
+        form.current.reset();
     }, (error) => {
-        console.log(error.text);
         alert("ເກີດຂໍ້ຜິດພາດ: " + error.text);
     });
   };
 
-
   const styles = {
-    wrapper: {
-      backgroundColor: '#000000',
-      minHeight: '100vh',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      fontFamily: "'Inter', sans-serif",
-      color: '#ffffff',
-      margin: 0
-    },
-    container: {
-      backgroundColor: '#111111',
-      padding: '50px 40px',
-      borderRadius: '20px',
-      width: '100%',
-      maxWidth: '450px',
-      textAlign: 'center',
-      boxShadow: '0 10px 50px rgba(0,0,0,0.7)',
-      border: '1px solid #222'
-    },
-    subtitle: {
-      color: '#A78BFA',
-      fontSize: '14px',
-      fontWeight: '700',
-      letterSpacing: '2px',
-      marginBottom: '10px'
-    },
-    title: {
-      fontSize: '42px',
-      margin: '0 0 10px 0',
-      fontWeight: '800'
-    },
-    italicText: {
-      color: '#A78BFA',
-      fontStyle: 'italic'
-    },
-    desc: {
-      color: '#888',
-      marginBottom: '40px',
-      fontSize: '16px'
-    },
-    inputGroup: {
-      textAlign: 'left',
-      marginBottom: '20px'
-    },
-    label: {
-      display: 'block',
-      fontSize: '12px',
-      fontWeight: '600',
-      color: '#666',
-      marginBottom: '8px',
-      letterSpacing: '1px'
-    },
-    input: {
-      width: '100%',
-      padding: '14px',
-      backgroundColor: '#0a0a0a',
-      border: '1px solid #333',
-      borderRadius: '10px',
-      color: '#fff',
-      fontSize: '16px',
-      outline: 'none',
-      boxSizing: 'border-box'
-    },
-    button: {
-      width: '100%',
-      padding: '16px',
-      backgroundColor: '#7C3AED',
-      color: '#fff',
-      border: 'none',
-      borderRadius: '12px',
-      fontSize: '18px',
-      fontWeight: '700',
-      cursor: 'pointer',
-      marginTop: '10px',
-      transition: '0.3s'
-    }
+    wrapper: { backgroundColor: '#000', color: '#fff', fontFamily: "'Inter', sans-serif", margin: 0 },
+    nav: { padding: '20px', textAlign: 'center', borderBottom: '1px solid #222', position: 'sticky', top: 0, backgroundColor: '#000', zIndex: 100 },
+    section: { padding: '80px 20px', maxWidth: '1000px', margin: '0 auto' },
+    hero: { textAlign: 'center', padding: '100px 20px' },
+    title: { fontSize: '48px', fontWeight: '800', margin: '0' },
+    purpleText: { color: '#A78BFA' },
+    grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', marginTop: '40px' },
+    card: { backgroundColor: '#111', padding: '30px', borderRadius: '20px', border: '1px solid #222' },
+    input: { width: '100%', padding: '14px', backgroundColor: '#0a0a0a', border: '1px solid #333', borderRadius: '10px', color: '#fff', marginBottom: '15px' },
+    button: { width: '100%', padding: '16px', backgroundColor: '#7C3AED', color: '#fff', border: 'none', borderRadius: '12px', fontWeight: '700', cursor: 'pointer' }
   };
 
   return (
     <div style={styles.wrapper}>
-      <div style={styles.container}>
-        <p style={styles.subtitle}>GET IN TOUCH</p>
-        <h1 style={styles.title}>Let's <span style={styles.italicText}>talk</span></h1>
-        <p style={styles.desc}>Drop us a message and we'll get back to you.</p>
+      {/* 1. Header/Hero Section */}
+      <header style={styles.hero}>
+        <p style={{ color: '#A78BFA', fontWeight: 'bold' }}>HELLO, I AM A GRADUATE</p>
+        <h1 style={styles.title}>Computer <span style={styles.purpleText}>Science</span></h1>
+        <p style={{ color: '#888', fontSize: '18px' }}>Specializing in Web Development & AI Applications.</p>
+      </header>
 
-        <form ref={form} onSubmit={sendEmail}>
-          <div style={styles.inputGroup}>
-            <label>NAME</label>
-            <input type="text" name="from_name" placeholder="Your full name" required style={styles.input} />
+      {/* 2. Projects Section (ຂໍ້ມູນຈາກ CV) */}
+      <section style={styles.section}>
+        <h2 style={{ fontSize: '32px' }}>Selected <span style={styles.purpleText}>Projects</span></h2>
+        <div style={styles.grid}>
+          <div style={styles.card}>
+            <h3 style={styles.purpleText}>Plant Disease Detection</h3>
+            <p style={{ color: '#888' }}>ພັດທະນາລະບົບກວດຈັບພະຍາດໃບໝາກແຕງ ໂດຍໃຊ້ CNN Model ແລະ Python.</p>
           </div>
-
-          <div style={styles.inputGroup}>
-            <label>EMAIL</label>
-            <input type="email" name="email" placeholder="you@example.com" required style={styles.input} />
+          <div style={styles.card}>
+            <h3 style={styles.purpleText}>Smart Scheduling System</h3>
+            <p style={{ color: '#888' }}>ລະບົບຈັດຕາຕະລາງຮຽນອັດສະລິຍະ ສຳລັບຄະນະວິທະຍາສາດທຳມະຊາດ.</p>
           </div>
+        </div>
+      </section>
 
-          <div style={styles.inputGroup}>
-            <label>MESSAGE</label>
-            <textarea name="message" placeholder="What's on your mind?" required 
-              style={{...styles.input, height: '120px', resize: 'none'}} />
-          </div>
+      {/* 3. Skills Section */}
+      <section style={{ ...styles.section, backgroundColor: '#050505' }}>
+        <h2 style={{ fontSize: '32px' }}>Technical <span style={styles.purpleText}>Skills</span></h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }}>
+          {['React', 'Node.js', 'Python', 'Machine Learning', 'Tailwind CSS', 'Django'].map(skill => (
+            <span key={skill} style={{ padding: '10px 20px', border: '1px solid #333', borderRadius: '50px', fontSize: '14px' }}>{skill}</span>
+          ))}
+        </div>
+      </section>
 
-          <button type="submit" style={styles.button}>
-            Send Message
-          </button>
-        </form>
-      </div>
+      {/* 4. Contact Section (ອັນເກົ່າຂອງເຈົ້າ) */}
+      <section style={styles.section}>
+        <div style={{ maxWidth: '500px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '32px' }}>Let's <span style={styles.purpleText}>Work Together</span></h2>
+          <form ref={form} onSubmit={sendEmail} style={{ marginTop: '40px', textAlign: 'left' }}>
+            <label style={{ fontSize: '12px', color: '#666' }}>NAME</label>
+            <input type="text" name="name" placeholder="Your Name" required style={styles.input} />
+            
+            <label style={{ fontSize: '12px', color: '#666' }}>EMAIL</label>
+            <input type="email" name="email" placeholder="Email Address" required style={styles.input} />
+            
+            <label style={{ fontSize: '12px', color: '#666' }}>MESSAGE</label>
+            <textarea name="message" placeholder="Message" required style={{ ...styles.input, height: '120px' }} />
+            
+            <button type="submit" style={styles.button}>Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <footer style={{ padding: '40px', textAlign: 'center', color: '#444', fontSize: '14px' }}>
+        © 2026 Built with React & Vercel
+      </footer>
     </div>
   );
 }
